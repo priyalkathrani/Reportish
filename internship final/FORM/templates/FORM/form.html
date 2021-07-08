@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Internship Project</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="static/FORM/reportish_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <style>
+body 
+{
+  background-image: url(static/FORM/back1.jpg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {box-sizing: border-box}
+
+select{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-size: 15px;
+}
+/* Full-width input fields */
+input[type=text], input[type=Date],textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  font-size: 15px;
+}
+
+input[type=text]:focus, input[type=Date]:focus,textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .submitbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  background-color: white;
+  box-shadow: 5px 5px 20px indigo;
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .submitbtn {
+     width: 100%;
+  }
+}
+</style>
+  </head>
+  <body>
+    <center>
+      <div><img src="/static/FORM/reportish.png" height="100px" width="330px"></div> <br>
+    <section class="ftco-section contact-section" style="width: 50%">
+      <div class="container">
+        <div class="row block-9 justify-content-center mb-5">
+          <div class="col-md-8 mb-md-5">
+            
+            <form action="submit" method="POST" style="border:1px solid #ccc">
+              {% csrf_token %}
+  <div class="container">
+    <h1>- - - - - - - - - - - - - Expert Lecture Entry Form - - - - - - - - - - - - </h1>
+    <hr>
+
+    <label style="float: left;"><b>Guest Faculty Name</b></label>
+    <input type="text" placeholder="Enter Guest Faculty Name" name="gfname" required>
+
+    <label style="float: left;"><b>Coordinating Faculty Name</b></label>
+    <input type="text" placeholder="Enter Coordinating Faculty Name" name="coname1" required>
+
+    <label style="float: left;"><b>Subject</b></label>
+    <input type="text" placeholder="Enter Subject Name" name="subname" required>
+
+    <label style="float: left;"><b>Select Department</b></label>
+    <input type="text" placeholder="Enter Department" name="dept">
+
+  <label style="float: left;"><b>Select Year of Students</b></label>
+  <select id="year" name="year">
+    <option value="first year">1st Year</option>
+    <option value="second year">2nd Year</option>
+    <option value="third year">3rd Year</option>
+    <option value="forth year">4th Year</option>
+  </select><br>
+
+    <label style="float: left;"><b>Date of Lecture</b></label><br><br>
+    <input type="Date"  name="date" required><br>
+
+    <label style="float: left;"><b>Day of Lecture</b></label><br><br>
+    <input type="text"  name="day" required><br>
+
+    <label style="float: left;"><b>Starting Time</b></label>
+    <input type="Time"  name="s_time" required style="margin-left: -450px;"><br><br>
+
+    <label style="float: left;"><b>Ending Time</b></label>
+    <input type="Time"  name="e_time" required style="margin-left: -450px;"><br><br>
+
+    <label style="float: left;"><b>Venue</b></label>
+    <input type="text" placeholder="Enter Venue" name="venue" required>
+    
+    <label style="float: left;"><b>Topics Discussed</b></label> <br> <br> <br>
+    <label style="float: left;"><b>1:</b></label>
+    <input type="text" name="topic1" required>
+
+    <label style="float: left;"><b>2:</b></label>
+    <input type="text" name="topic2" required>
+
+    <label style="float: left;"><b>3:</b></label>
+    <input type="text" name="topic3" required>
+
+    <label style="float: left;"><b>4:</b></label>
+    <input type="text" name="topic4" required>
+
+    <label style="float: left;"><b>Total Feedback</b></label>
+    <input type="text" placeholder="Enter Total Feedback" name="tf" required>
+
+    <label style="float: left;"><b>No. of Completely Agree</b></label>
+    <input type="text" placeholder="Enter No. of Completely agree" name="c_agree" required>
+
+    <label style="float: left;"><b>No. of Agree</b></label>
+    <input type="text" placeholder="Enter No. of Agree" name="agree" required>
+
+    <label style="float: left;"><b>No. of Disagree</b></label>
+    <input type="text" placeholder="Enter No. of Disagree" name="disagree" required>
+
+    <label style="float: left;"><b>No. of Completely Disagree</b></label>
+    <input type="text" placeholder="Enter No. of Completely disagree" name="c_disagree" required>
+
+    <label style="float: left;"><b>Enter Comments</b></label>
+    <textarea placeholder="Enter comments here" name="comments" rows="5" cols="50"></textarea>
+    
+
+    <div class="clearfix">
+      <button type="submit" class="submitbtn">Submit</button>
+      <button type="button" class="cancelbtn">Cancel</button>
+    </div>
+  </div>
+</form> 
+          </div>
+        </div>
+    </section>
+    </center>
+  </body>
+</html>
